@@ -5,10 +5,14 @@ const FormDestino = ({ adicionarDestino }) => {
     const [descricao, setDescricao] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        adicionarDestino({ nome, descricao });
-        setNome('');
-        setDescricao('');
+        if (nome == '' && descricao == '') {
+            alert("Campos vazios")
+        } else {
+            e.preventDefault();
+            adicionarDestino({ nome, descricao });
+            setNome('');
+            setDescricao('');
+        }
     };
 
     return (
