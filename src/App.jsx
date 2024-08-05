@@ -4,7 +4,11 @@ function App() {
 
   return (
     <>
-
+      <div className="App">
+        <Header />
+        {/* Outros componentes virão aqui */}
+        <Footer />
+      </div>
     </>
   )
 }
