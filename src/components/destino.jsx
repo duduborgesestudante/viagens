@@ -9,4 +9,5 @@ const Destino = ({ nome, descricao }) => {
     );
 };
 
+
 export default Destino;

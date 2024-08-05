@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Destino from './Destino';
-import FormDestino from './FormDestino';
+import Header from './components/header';
+import Footer from './components/footer';
+import Destino from './components/destino';
+import FormDestino from './components/formDestino';
 
 function App() {
   const [destinos, setDestinos] = useState([
