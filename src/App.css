@@ -56,6 +56,33 @@ input {
   margin: 0.5rem;
 }
 
+.pagamentos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  button {
+    background: greenyellow;
+    color: black;
+    font-weight: 700;
+    margin: auto;
+    padding: 10px;
+  }
+
+  p {
+    text-decoration: underline;
+  }
+
+  div {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
 .destino {
   display: flex;
   flex-direction: column;

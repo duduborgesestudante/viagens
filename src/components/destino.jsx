@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css'
 import { calcularCustos } from '../pages/destinos';
+import { useNavigate } from 'react-router-dom';
+import Pagamento from '../pages/pagamento';
 
 
 const Destino = ({ nome, descricao, distancia }) => {
@@ -9,7 +11,7 @@ const Destino = ({ nome, descricao, distancia }) => {
     const [tipoEstalagem, setTipoEstalagem] = useState('padrão');
     const [participantes, setParticipantes] = useState(1);
     const [subtotal, setSubtotal] = useState(0);
-
+    const [irParaPagamento, setIrParaPagamento] = useState(false);
     useEffect(() => {
         if (dataIda && dataVolta) {
             const custo = calcularCustos(distancia, dataIda, dataVolta, tipoEstalagem, participantes);
@@ -17,8 +19,18 @@ const Destino = ({ nome, descricao, distancia }) => {
         }
     }, [dataIda, dataVolta, tipoEstalagem, participantes]);
 
+    const finalizarCompra = () => {
+        alert('Compra finalizada!');
+        setIrParaPagamento(false);
+    };
+
+    if (irParaPagamento) {
+        return <Pagamento subtotal={subtotal} finalizarCompra={finalizarCompra} />;
+    }
+
     return (
         <div className="destino">
+
             <h2>{nome}</h2>
             <p>{descricao}</p>
             <p>Distância: {distancia} km</p>
@@ -38,6 +50,7 @@ const Destino = ({ nome, descricao, distancia }) => {
                 <input type="number" value={participantes} onChange={(e) => setParticipantes(e.target.value)} min="1" />
             </label>
             <p>Subtotal: R${subtotal}</p>
+            <button onClick={() => setIrParaPagamento(true)}>Comprar</button>
         </div>
     );
 };
