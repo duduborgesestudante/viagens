@@ -57,9 +57,20 @@ input {
 }
 
 .destino {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   border: 1px solid #ddd;
   margin: 1rem;
   padding: 1rem;
+}
+
+.destino input {
+  width: 100px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  text-align: center;
+  padding: 0;
 }
 
 * {

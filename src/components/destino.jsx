@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css'
+import { calcularCustos } from '../pages/destinos';
+
+
 const Destino = ({ nome, descricao, distancia }) => {
     const [dataIda, setDataIda] = useState('');
     const [dataVolta, setDataVolta] = useState('');
     const [tipoEstalagem, setTipoEstalagem] = useState('padrão');
     const [participantes, setParticipantes] = useState(1);
     const [subtotal, setSubtotal] = useState(0);
+
     useEffect(() => {
         if (dataIda && dataVolta) {
             const custo = calcularCustos(distancia, dataIda, dataVolta, tipoEstalagem, participantes);

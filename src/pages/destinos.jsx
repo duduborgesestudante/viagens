@@ -4,7 +4,8 @@ import Footer from '../components/footer';
 import Destino from '../components/destino';
 import FormDestino from '../components/formDestino';
 import '../App.css'
-const calcularCustos = (distancia, dataIda, dataVolta, tipoEstalagem, participantes) => {
+
+export const calcularCustos = (distancia, dataIda, dataVolta, tipoEstalagem, participantes) => {
     const hoje = new Date();
     const ida = new Date(dataIda);
     const volta = new Date(dataVolta);
